@@ -203,6 +203,11 @@
     max-width: 1280px;
   }
 
+  /* Safe area padding for iOS devices with notch/home indicator */
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
   /* Glassmorphism Effect */
   .glass {
     background: oklch(1 0 0 / 0.05);

@@ -56,7 +56,7 @@ export async function SiteHeader() {
             <div className="container flex h-16 items-center gap-3">
                 <div className="flex items-center gap-4 md:gap-8 min-w-0">
                     <HeaderLogo adminName={firstAdminName} shopNameOverride={shopNameOverride} shopLogoOverride={shopLogoOverride} />
-                    <HeaderNav isAdmin={isAdmin} />
+                    <HeaderNav isAdmin={isAdmin} isLoggedIn={!!user} />
                 </div>
                 <div className="hidden md:flex flex-1 justify-center px-4">
                     {/* HeaderSearch removed as per user request */}

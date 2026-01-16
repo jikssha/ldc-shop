@@ -39,7 +39,9 @@
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com)
 2. 左侧菜单 **Storage & Databases** → **D1**
-3. 点击 **Create database**，输入名称（如 `ldc-shop`）
+3. 点击 **Create database**，输入名称：**`ldc-shop-next`**
+
+> 💡 **推荐使用默认名称 `ldc-shop-next`**：项目的 `wrangler.json` 已配置自动绑定此名称的数据库，使用默认名称可以跳过手动绑定步骤。
 
 #### 2. 连接 Git 仓库部署
 
@@ -54,13 +56,16 @@
 
 #### 3. 绑定 D1 数据库
 
-部署后，进入项目 **Settings** → **Bindings**：
+**如果你使用了默认数据库名 `ldc-shop-next`**，数据库会自动绑定，可以跳过此步骤。
 
-1. 点击 **Add binding**
-2. 选择 **D1 Database**
-3. **Variable name**: `DB`（必须是这个名字）
-4. 选择你创建的数据库
-5. 保存
+**如果你使用了其他数据库名**，需要手动绑定：
+
+1. 部署后，进入项目 **Settings** → **Bindings**
+2. 点击 **Add binding**
+3. 选择 **D1 Database**
+4. **Variable name**: `DB`（必须是这个名字）
+5. 选择你创建的数据库
+6. 保存
 
 #### 4. 配置环境变量
 

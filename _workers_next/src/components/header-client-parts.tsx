@@ -34,20 +34,28 @@ export function HeaderLogo({ adminName, shopNameOverride, shopLogoOverride }: { 
     )
 }
 
-export function HeaderNav({ isAdmin }: { isAdmin: boolean }) {
+export function HeaderNav({ isAdmin, isLoggedIn }: { isAdmin: boolean; isLoggedIn: boolean }) {
     const { t } = useI18n()
 
     return (
-        <>
+        <div className="hidden md:flex items-center gap-6">
+            {isLoggedIn && (
+                <Link
+                    href="/orders"
+                    className="flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                >
+                    {t('common.myOrders')}
+                </Link>
+            )}
             {isAdmin && (
                 <Link
-                    href="/admin"
-                    className="hidden lg:flex items-center text-sm font-medium text-muted-foreground hover:text-primary"
+                    href="/admin/settings"
+                    className="flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                     {t('common.admin')}
                 </Link>
             )}
-        </>
+        </div>
     )
 }
 

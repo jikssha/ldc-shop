@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { MobileNavWrapper } from "@/components/mobile-nav-wrapper";
 import { Providers } from "@/components/providers";
 import { cn } from "@/lib/utils";
 import { getSetting } from "@/lib/db/queries";
@@ -70,8 +71,9 @@ export default async function RootLayout({
         <Providers themeColor={themeColor}>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
-            <div className="flex-1">{children}</div>
+            <div className="flex-1 pb-16 md:pb-0">{children}</div>
             <SiteFooter />
+            <MobileNavWrapper />
           </div>
         </Providers>
       </body>
